@@ -1,0 +1,11 @@
+version = 1
+revision = 1
+requires-python = ">=3.11"
+required-markers = [
+    "sys_platform == 'win32' or sys_platform == 'win_amd64' or sys_platform == 'win_arm64'",
+]
+
+[[package]]
+name = "reboot-random-service"
+version = "0.1.0"
+source = { virtual = "." }
