@@ -3,27 +3,34 @@
 This Windows Service reboots the computer at random intervals between 10 and 60 minutes.
 
 ## Prerequisites
-- Python 3.x installed
 - Administrative privileges
-- `pywin32` Python package
 
 ## Installation
 
-1. **Install pywin32**  
+0. **Install `uv`**
    ```powershell
-   pip install pywin32
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
    ```
-2. **Copy the script**  
-   Save `RebootRandomService.py` to a desired location, e.g., `C:\RebootRandomService.py`.
+
+1. **Clone the repo**
+   ```batch
+   git clone https://github.com/samedit66/reboot_random_service.git
+   cd reboot_random_service
+   ```
+
+2. **Install dependencies**  
+   ```powershell
+   uv sync
+   ```
 
 3. **Register the service**  
    ```batch
-   python C:\RebootRandomService.py install
+   uv run RebootRandomService.py install
    ```
 
 4. **Start the service**  
    ```batch
-   python C:\RebootRandomService.py start
+   uv run RebootRandomService.py start
    ```
 
 ## Usage
@@ -36,13 +43,13 @@ This Windows Service reboots the computer at random intervals between 10 and 60 
 
 - **Stop** the service:  
   ```batch
-  python C:\RebootRandomService.py stop
+  uv run RebootRandomService.py stop
   ```
 - **Start** the service:  
   ```batch
-  python C:\RebootRandomService.py start
+  uv run RebootRandomService.py start
   ```
 - **Remove** the service:  
   ```batch
-  python C:\RebootRandomService.py remove
+  uv run RebootRandomService.py remove
   ```
